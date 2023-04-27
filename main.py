@@ -24,9 +24,9 @@ def products():
     #     (3,"milk",60,65,150,)
     # ]
  cur = conn.cursor()
- cur.execute("Insert into products(id,name.buyingprice,sellingprice,quantity)")
- rows = cur.fetchall()
- print("rows")
- return ("products.html",rows=rows)
+ cur.execute("SELECT*from products;")
+ products = cur.fetchall()
+ print("products")
+ return render_template("products.html",products=products)
 
 app.run()

@@ -18,7 +18,7 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
               <a class="nav-link" href="#">Dashboard</a>
               <a class="nav-link" href="#">Sales</a>
-              <a class="nav-link disabled">Inventories</a>
+              <a class="nav-link" href="/products">Products</a>
               <a class="nav-link disabled">Stock</a>
             </div>
           </div>
@@ -53,7 +53,8 @@
               </tr>
             </thead>
               <tbody>
-              <td>{%for i in products%}
+              
+                {%for i in products%}
               <tr>
                 <td>{{ i[0] }}</td>
                 <td>{{ i[1] }}</td>
@@ -62,7 +63,7 @@
                 <td>{{ i[4] }}</td>
               </tr>
               {%endfor%}
-              </td>
+              
               </tbody>
           </table>
         </div>
