@@ -28,6 +28,11 @@ def products():
  products = cur.fetchall()
  print("products")
  return render_template("products.html",products=products)
+
+@app.route("/save-product")
+def save-product():
+
+
 app.run()
 
 # @app.route("/sales")
@@ -39,4 +44,3 @@ app.run()
 #  print("sales")
 #  return render_template("products.html",sales=sales)
 
-# app.run()
