@@ -28,5 +28,15 @@ def products():
  products = cur.fetchall()
  print("products")
  return render_template("products.html",products=products)
-
 app.run()
+
+# @app.route("/sales")
+# def sales():
+ 
+#  cur = conn.cursor()
+#  cur.execute()
+#  sales = cur.fetchall()
+#  print("sales")
+#  return render_template("products.html",sales=sales)
+
+# app.run()
