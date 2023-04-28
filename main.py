@@ -29,18 +29,20 @@ def products():
  print("products")
  return render_template("products.html",products=products)
 
+
+@app.route("/sales")
+def sales():
+ 
+ cur = conn.cursor()
+ cur.execute("SELECT*from sales;")
+ sales = cur.fetchall()
+ print("sales")
+ return render_template("sales.html",sales=sales)
+ 
 @app.route("/save-product")
 def save-product():
-
+  pass
 
 app.run()
 
-# @app.route("/sales")
-# def sales():
- 
-#  cur = conn.cursor()
-#  cur.execute()
-#  sales = cur.fetchall()
-#  print("sales")
-#  return render_template("products.html",sales=sales)
 
