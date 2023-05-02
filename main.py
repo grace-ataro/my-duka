@@ -39,10 +39,17 @@ def sales():
  print("sales")
  return render_template("sales.html",sales=sales)
  
-@app.route("/save-product")
-def save-product():
-  pass
-
+@app.route('/save-product',method=['POST'])
+def save_product():
+    name=request.form['name']
+    bp=request.form['bp']
+    sp=request.form['sp']
+    quantity=request.form['quantity']
+    print(name,bp,sp,quantity)
+    return render_template ('save-product.html',name=name,bp=bp,sp=sp,quantity=quantity)
+                                                        
 app.run()
+
+
 
 
