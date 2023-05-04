@@ -41,12 +41,12 @@
           </div>
         </div>
        
-    <div class="col-lg-6 col-md-6 col-sm=9" style="padding-top: 25px;">
-          <!-- Button trigger modal -->
+<div class="col-lg-6 col-md-6 col-sm=9" style="padding-top:65px;">
+   <div class="button" style="padding-left: 200px;">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
        Add Products
       </button>
-
+  </div>
  <!-- Modal -->
  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
    <div class="modal-dialog">
@@ -56,7 +56,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form methods="post" action="/save-product">
+        <form method="post" action="/save-product">
           <div class="row mb-3">
             <label for="inputname" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
@@ -90,10 +90,9 @@
       </form>
       
       </div>
-    </div>
   </div>
  </div>
- </div>
+
 
      <h1>MY PRODUCTS</h1>
           <table class="table table-bordered"  id="myTable">
@@ -122,8 +121,6 @@
           </table>
 </div>
 </div>
-</div>
-
 <div class="col-lg-2 col-md-2 col sm1"></div> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
