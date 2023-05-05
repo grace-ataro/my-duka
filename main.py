@@ -24,7 +24,7 @@ def products():
     #     (3,"milk",60,65,150,)
     # ]
  cur = conn.cursor()
- cur.execute("SELECT*from products;")
+ cur.execute("SELECT * from products;")
  products = cur.fetchall()
  print("products")
  return render_template("products.html",products=products)
@@ -33,9 +33,9 @@ def products():
 @app.route("/sales")
 def sales():
  cur = conn.cursor()
- cur.execute("SELECT*from sales;")
+ cur.execute("SELECT s.id,p.name,s.quantity,s.created_at from products as p join sales as s on s.pid=p.id;")
  sales = cur.fetchall()
- cur.execute("SELECT*from products;")
+ cur.execute("SELECT * from products;")
  products=cur.fetchall()
  print("sales")
  return render_template("sales.html",sales=sales,products=products)
