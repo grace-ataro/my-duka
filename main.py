@@ -8,10 +8,12 @@ try:
     conn=psycopg2.connect("dbname='myduka' user='postgres' host='localhost' password='18090000'")
     print("Database connected succesfully")
 except Exception as e:
-    print("I am unable to connect to database",e)    
+    print("I am unable to connect to database",e) 
+
 @app.route("/")
 def home():
     username="Grace Ataro"
+
     return render_template("index.html",username=username)
 
 
@@ -27,6 +29,7 @@ def products():
  cur.execute("SELECT * from products;")
  products = cur.fetchall()
  print("products")
+
  return render_template("products.html",products=products)
 
 
@@ -38,6 +41,7 @@ def sales():
  cur.execute("SELECT * from products;")
  products=cur.fetchall()
  print("sales")
+
  return render_template("sales.html",sales=sales,products=products)
  
 @app.route('/save-product',methods=['POST'])
@@ -63,5 +67,18 @@ def save_sales():
     conn.commit()
 
     return redirect("/sales")
+
+@app.route('/dashboard')
+def dashboard():
+ cur = conn.cursor()
+ cur.execute("SELECT sum((p.selling_price*s.quantity)-(p.buying_price*s.quantity))as total,p.name FROM products as p join sales as s on s.pid=p.id group by p.name;")
+ rows = cur.fetchall()
+ a = []
+ b = []
+ for i in rows:
+    a.append(i[1])
+    b.append(float(i[0]))
+
+ return render_template("dashboard.html",products=a,sales=b)
 
 app.run(debug=True)
