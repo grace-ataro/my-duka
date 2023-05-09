@@ -85,6 +85,7 @@ def dashboard():
  for i in rows:
     a.append(i[0])
     b.append(float(i[0]))
+ 
  return render_template("dashboard.html",products=a,sales=b)
 
 app.run(debug=True)
