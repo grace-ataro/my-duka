@@ -89,6 +89,6 @@ def dashboard():
 
  print(c,d)
 
- return render_template("dashboard.html",products=a,profit=b,day=c,sales=d)
+ return render_template("dashboard.html",products=a,profit=b,days=c,sales=d)
 
 app.run(debug=True)
