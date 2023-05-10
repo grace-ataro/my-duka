@@ -79,15 +79,16 @@ def dashboard():
     a.append(i[1])
     b.append(float(i[0]))
  print(a,b)
- cur.execute("SELECT SUM(p.selling_price * s.Quantity) as totalsales FROM  products  as p JOIN sales as s ON s.pid = p.id GROUP BY created_at;")
+ cur.execute("SELECT SUM(p.selling_price * s.Quantity) as salesperday FROM  products  as p JOIN sales as s ON s.pid = p.id GROUP BY created_at;")
  rows = cur.fetchall()
  c = []
  d = []
  for i in rows:
-    c.append(i[1])
+    c.append=(i[0])
     d.append(float(i[0]))
+
  print(c,d)
 
- return render_template("dashboard.html",products=a,sales=b,day=c,sales=d)
+ return render_template("dashboard.html",a=products,b=profit,c=sales,d=sales)
 
 app.run(debug=True)
